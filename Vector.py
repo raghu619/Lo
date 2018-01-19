@@ -90,9 +90,14 @@ class Vector(object):
     def projection_orthgonal_component(self,other):
         parallel_comp=self.projection_parallel_component(other)
         return self.minus(parallel_comp)
-my_vector=Vector([-9.88,-3.264,-8.159])
+    def Cal_projection_compoenent_result(self,other):
+        orthogonal_comp=self.projection_orthgonal_component(other)
+        parallel_comp=self.projection_parallel_component(other)
+
+        return orthogonal_comp.plus(parallel_comp)
+my_vector=Vector([3.009,-6.172,3.692,-2.51])
 print(my_vector)
-my_vector1=Vector([-2.155,-9.353,-9.473])
+my_vector1=Vector([6.404,-9.144,2.759,8.718])
 
 print(my_vector==my_vector1)
 print(Vector.plus(my_vector,my_vector1))
@@ -104,3 +109,4 @@ print("{0:.4f}".format(my_vector.angle_with(my_vector1)))
 
 print(my_vector.projection_parallel_component(my_vector1))
 print(my_vector.projection_orthgonal_component(my_vector1))
+print(my_vector.Cal_projection_compoenent_result(my_vector1))
